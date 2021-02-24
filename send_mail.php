@@ -1,10 +1,11 @@
 <?php 
 session_start();
 // ========== LOCAL DATABASE CONNECTION =======
-define('DB_HOST', 'localhost');
-define('DB_PASS', '');
-define('DB_NAME', 'shipping');
-define('DB_USER', 'root');
+define('DB_HOST', 'l0ebsc9jituxzmts.cbetxkdyhwsb.us-east-1.rds.amazonaws.com');
+define('DB_PASS', 'j4t9todnysc3k5wc');
+define('DB_NAME', 'dkkgb40mcx9x9g95');
+define('DB_USER', 'bvgqefhc1r38rru4');
+
 
 
 
