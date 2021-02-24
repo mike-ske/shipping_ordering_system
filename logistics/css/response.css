@@ -1,0 +1,95 @@
+/* 
+#form_2 {
+    display: none;
+} */
+
+.hide {
+    display: none !important;
+}
+
+
+
+.top-icons-agileits-w3layouts label {
+    padding: 20px;
+    display: inline-block;
+    background: #5fc9f8;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: .5s ease all;
+	
+}
+small{
+	font-size: 14px;
+	letter-spacing: 1px;
+	text-transform: none;
+}
+.top-icons-agileits-w3layouts label:hover {
+	background:#fa5173!important;
+	
+}
+.top-icons-agileits-w3layouts label:hover i {
+	color: #fff;
+	
+}
+
+#tab_2{
+	background:#fc3158;
+}
+
+
+
+.top-icons-agileits-w3layouts .progress {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.top-icons-agileits-w3layouts label i {
+    color: #fff;
+    font-size: 20px;
+}
+.top-icons-agileits-w3layouts #tab1,
+.top-icons-agileits-w3layouts #tab2,
+.top-icons-agileits-w3layouts #tab3{
+	display: none;
+}
+
+
+/* ========== FOR AIR =========== */
+.ship_air,
+.ship_sea{
+    display: none;
+}
+#reg7,
+#reg6{
+	display: none ;
+}
+#reg6:checked ~ .ship_air{
+    display: block;
+}
+#reg7:checked ~ .ship_sea{
+    display: block;
+}
+.head__line{
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    color: #ffffff;
+    background: #0188c4;
+    border: none;
+    font-size: 16px;
+    letter-spacing: .5px;
+    font-weight: 500;
+    margin: 40px auto;
+    display: flex;
+    transition: all .5s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+/* ========== FOR SEA =========== */
+
+
+.ship_air,
+.ship_sea {
+    width: 100%;
+}
