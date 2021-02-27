@@ -37,7 +37,7 @@
                 
                 
                 // ==== REDIRECT TO HOME PAGE =======
-                // header("Location: ../web2/index.html");
+                header("Location: ../web2/index.html");
                 
                 }
                 else
