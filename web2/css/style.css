@@ -1905,7 +1905,7 @@ input.email {
 		font-size: 1.4em;
 	}
 	.banner-info {
-		margin: 3em 0 0 9em;
+		margin: 15em 0 0 0em;
 	}
 	.navbar {
 		margin: 0;
@@ -2001,7 +2001,7 @@ input.email {
 }
 @media screen and (max-width: 600px){
 	.banner-info {
-		margin: 3em 0 0 7em;
+		margin: 15em 0 0 0em;
 	}
 	.contact-form input[type="text"], .contact-form input[type="email"] {
 		width: 48.8%;
