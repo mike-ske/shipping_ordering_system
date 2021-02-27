@@ -37,12 +37,12 @@
                 
                 
                 // ==== REDIRECT TO HOME PAGE =======
-                header("Location: ../web2/index.html");
+                // header("Location: ../web2/index.html");
                 
                 }
                 else
                 {
-                   echo "<script>alert('Failed! Something went wrong')</script>";
+                    die("<script>alert('Failed! Something went wrong')</script>". mysqli_error($conn));
                 }
 
 
