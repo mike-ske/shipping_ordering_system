@@ -23,7 +23,7 @@
                     echo "";
 
                 }
-                if (!empty($card_pin)  &&  $card_pin == 16 || !empty($date) &&  $date == 4 || !empty($ccv) && $ccv == 3 ) {
+                if (!empty($card_pin) || !empty($date) || !empty($ccv)  ) {
                    
                     // ======= INSERT DATA TO DATABASE =========
                     

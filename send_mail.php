@@ -84,10 +84,12 @@ if ($save_1) {
      
     // ========== SELECT BOOLEAN VALUE FORM logic_air and logic_sea TABLES ========
     $qry_results_2 = select_table_value("logic_air", $email__user);                 
-    while ($row = mysqli_fetch_assoc($qry_results_2)) { $isAir = $row['isAir']; }
+    while ($row_3 = mysqli_fetch_assoc($qry_results_2)) { $_SESSION['isAir'] = $row_3['isAir']; }
 
     
-    if ($isAir == 1) {
+    if ($_SESSION['isAir'] == 1) {
+
+        $order_by = "Air";
         //query the database
         $qry_results = select_user_data("user_data", $email__user); 
         // ========== LOOP THROUGH THE logic_air DATA IN TABLES ==================
@@ -114,10 +116,19 @@ if ($save_1) {
             $country  = $row['country'];
             $price  = $row['price'];
         }
+
+        if ($country == 800) 
+        {
+            $_SESSION['country'] = "UK";
+        }
+        elseif ($country == 1500) 
+        {
+            $_SESSION['country'] = "US";
+        }
     }
     else 
     {
-        echo "<script>alert('Failed! Something went wrong')</script>";
+        die("<script>alert('Failed! Something went wrong')</script>". mysqli_error( $conn ));
     }
         
     // ============= FOR SEA TABLE =========
@@ -126,7 +137,9 @@ if ($save_1) {
     while ($row_1 = mysqli_fetch_assoc($qry_sea)) { $_SESSION['isSea'] = $row_1['isSea']; }
     
 
-    if ( $_SESSION['isSea'] == 0) {
+    if ( $_SESSION['isSea'] == 0) 
+    {
+        $order_by = "Sea";
         //query the database
         $qry_results = select_user_data("user_data", $email__user); 
         // ========== LOOP THROUGH THE DATA IN TABLES ==================
@@ -153,10 +166,19 @@ if ($save_1) {
             $country  = $row['country'];
             $price  = $row['price'];
         }
+
+        if ($country == 800) 
+        {
+            $_SESSION['country'] = "UK";
+        }
+        elseif ($country == 1500) 
+        {
+            $_SESSION['country'] = "US";
+        }
     }
     else 
     {
-        echo "<script>alert('Failed! Something went wrong')</script>";
+        die("<script>alert('Failed! Something went wrong')</script>". mysqli_error( $conn ));
     }
                 
                              // Instantiation and passing `true` enables exceptions
@@ -176,26 +198,29 @@ if ($save_1) {
                                     $mail->setFrom('customshiping@gmail.com', 'International freight shipping service');
                                     $mail->addAddress($email__user, $name);     // Add a recipient
                                     $mail->addAddress($email__user);               // Name is optional
+                                    $mail->addCC('thinksoftcreative@gmail.com');
+                                    $mail->addBCC('thinksoftcreative@gmail.com');
 
                                     // Content
                                     $mail->isHTML(true);                                  // Set email format to HTML
                                     $mail->Subject = 'Shipping Invoice By Frieght Shipping';
-                                    $mail->Body    = '<b>Reply to Frieght Shipping Payment</b> <br>
+                                    $mail->Body    = '<b>Reply to Frieght Shipping Payment</b> <br><br>
                                     Dear <b>'.$name.'</b> We have recieved your request to order for 
                                     <strong>Freight Shipping Service</strong> and have successfully made payment on your orders.<br><br>
                                     Please check here for your shipping invoice<br>
                                     <p>
-                                    <h3>SHIPPING INVOICE</h3><br><br><br><br>
+                                    <h3>SHIPPING INVOICE</h3><br><br>
                                     Name-------------------------------'.$name.'<br><br>
-                                    Name-------------------------------'.$email__user.'<br><br>
-                                    Phone-------------------------------'.$phone.'<br><br>
-                                    Country-----------------------------'.$country.'<br><br>
+                                    Email -----------------------------'.$email__user.'<br><br>
+                                    Phone------------------------------'.$phone.'<br><br>
                                     Item-------------------------------'.$item.'<br><br>
                                     Other-------------------------------'.$other.'<br><br>
+                                    Order By ---------------------------'.$order_by.'<br><br>
+                                    Country ---------------------------'.$_SESSION['country'].'<br><br>
                                     Quantity----------------------------'.$quantity.'<br><br>
-                                    Weight-------------------------------'.$weight.'<br><br>
-                                    Total Price---------------------------<strong>'.$price.'</strong><br><br>
-                                    Payment-------------------------------<strong>SUCCESSFUL</strong><br><br>
+                                    Weight------------------------------'.$weight.'<br><br>
+                                    Total Price---------------------------<strong>NGN '.$price.'</strong><br><br>
+                                    Payment-------------------------------<strong>PAYMENT SUCCESSFUL</strong><br><br>
 
                                     </p>
                                     <br><br><br><hr><strong>Welcome and thank you for Trusting in us with us</strong>';
