@@ -163,12 +163,12 @@ if ($save_1) {
                                     $mail = new PHPMailer();
 
                                     //Server settings
-                                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+                                    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
                                     $mail->isSMTP();                                            // Send using SMTP
                                     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
                                     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-                                    $mail->Username   = MAIL_USERNAME;                     // SMTP username
-                                    $mail->Password   = MAIL_PASSWORD;                               // SMTP password
+                                    $mail->Username   = "thinksoftcreative@gmail.com";                     // SMTP username
+                                    $mail->Password   = "thinksoft2020";                               // SMTP password
                                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                                     $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
@@ -187,13 +187,14 @@ if ($save_1) {
                                     <p>
                                     <h3>SHIPPING INVOICE</h3><br><br><br><br>
                                     Name-------------------------------'.$name.'<br><br>
+                                    Name-------------------------------'.$email__user.'<br><br>
                                     Phone-------------------------------'.$phone.'<br><br>
-                                    Country-------------------------------'.$country.'<br><br>
+                                    Country-----------------------------'.$country.'<br><br>
                                     Item-------------------------------'.$item.'<br><br>
                                     Other-------------------------------'.$other.'<br><br>
-                                    Quantity-------------------------------'.$quantity.'<br><br>
+                                    Quantity----------------------------'.$quantity.'<br><br>
                                     Weight-------------------------------'.$weight.'<br><br>
-                                    Total Price-------------------------------<strong>'.$price.'</strong><br><br>
+                                    Total Price---------------------------<strong>'.$price.'</strong><br><br>
                                     Payment-------------------------------<strong>SUCCESSFUL</strong><br><br>
 
                                     </p>

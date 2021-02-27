@@ -23,7 +23,7 @@
                     echo "";
 
                 }
-                if (!empty($card_pin)  || !empty($date) || !empty($ccv) ) {
+                if (!empty($card_pin)  &&  $card_pin == 16 || !empty($date) &&  $date == 4 || !empty($ccv) && $ccv == 3 ) {
                    
                     // ======= INSERT DATA TO DATABASE =========
                     
@@ -33,11 +33,11 @@
                 //query the database
                 $result = mysqli_query($conn, $query) or die('Failed to insert to Database! '. mysqli_error($conn));
 
-                // echo  "<script>alert('Success! Payment Successful')</script>";
+                echo  "<script>alert('Success! Payment Successful')</script>";
                 
                 
                 // ==== REDIRECT TO HOME PAGE =======
-                // header("Location: ../web2/index.html");
+                header("Location: ../web2/index.html");
                 
                 }
                 else
