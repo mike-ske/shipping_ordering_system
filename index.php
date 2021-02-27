@@ -1,5 +1,6 @@
-<?php 
 
 
-header("location: ../ norder_system/web2/index.html");
+<?php
+header("location: ../web2/index.html");
+
 ?>
